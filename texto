@@ -1,0 +1,22 @@
+O funcionamento de um sistema de escalonamento preemptivo admite a interrupção  (ISR -Interrupt System Routine) -(mudança de contexto – que fica registrado para posteriormente ser recuperado pelo TCB Task Control Block) - de um processo para que outro, com maior prioridade, possa ser executado, ficando o processo anterior em estado de espera, até que possa voltar a ser executado. 
+
+Dentre os tipos de Sistemas RTOS tem-se, dentre os mais importantes:
+
+-Hard Real-Time Systems
+- Soft Real-Time Systems
+
+A diferença básica entre eles é que, enquanto que o SRT trata de eventos que podem ocasionar o mal funcionamento de um equipamento, de um programa, sem maiores prejuízos, além da indisponibilidade ou perda do recurso, processo etc, no HRT, um dano ou defeito no controlador do microkernel ou no dispositivo de acionamento de uma sirene em uma usina nuclear ou a inoperabilidade de um sistema de controle de voo, pode levar ao risco da perda de vidas humanas. 
+
+
+
+
+
+Um RTOS provê mais confiabilidade em relação ao tratamento de tarefas com restrição de tempo, além de possibilitar uma melhor modelagem da sua aplicação através da divisão dessa aplicação em pequenas tarefas. Porém, nem sempre é válida ou mesmo viável a escolha de um RTOS para determinados produtos. Essa decisão pode depender de vários fatores:
+1. CPU: A CPU utilizada no projeto pode determinar se você pode ou não utilizar um RTOS no seu projeto. Por exemplo, uma CPU de 4 bits, sem os registradores necessários, ou de baixa frequencia, é feita especificamente para sistemas bem simples e de baixo custo, tornando inviável a utilização de um RTOS.
+2. ROM: Quantidade de memória de programa disponível para o seu projeto. Precisa ser grande o suficiente para armazenar o código do Kernel mais o código da sua aplicação. Dependendo do Kernel, você pode precisar de memória entre 4K e 200Kb, apenas para o Kernel de RTOS’s mais simples.
+3. RAM: Quantidade de memória disponível para os dados do seu programa. O RTOS utiliza bastante memória para armazenamento das informações de contexto de execução das tarefas no TCB e no stack. O valor da memória RAM deve ser grande o suficiente para suprir as necessidades do Kernel e das tarefas da sua aplicação.
+4. Custo: Tanto o custo do RTOS quanto o custo extra do hardware necessário para suportar o RTOS devem ser levados em consideração.
+
+Cada RTOS disponível no mercado possui vantagens e desvantagens. A escolha do melhor sistema depende dos requisitos de hardware e software do produto.
+Os critérios de escolha podem variar bastante, desde a popularidade e reputação do RTOS, o custo e a disponibilidade do código-fonte, a portabilidade e escalabilidade, performance, ferramentas disponíveis e profissionais certificados no mercado.
+Existem diversos RTOS’s no mercado, alguns pagos e outros de livre distribuição. Alguns dos principais disponíveis no mercado são eCos, QNX, MicroC/OS-II, VxWorks, Monta Vista, FreeRTOS, etc.
